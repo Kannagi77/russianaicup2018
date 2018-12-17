@@ -1,0 +1,10 @@
+build
+.vs
+*.suo
+*.user
+local-runner/result.txt
+local-runner/game.log
+local-runner/visualizer-plugin.err
+packages
+Strategy.zip
+obj
