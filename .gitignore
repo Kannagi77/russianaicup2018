@@ -8,3 +8,4 @@ local-runner/visualizer-plugin.err
 packages
 Strategy.zip
 obj
+bin
