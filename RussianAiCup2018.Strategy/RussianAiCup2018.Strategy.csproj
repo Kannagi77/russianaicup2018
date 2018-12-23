@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Com.CodeGame.CodeBall2018.DevKit.CSharpCgdk</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
