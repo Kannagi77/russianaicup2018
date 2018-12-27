@@ -60,7 +60,7 @@ namespace Com.CodeGame.CodeBall2018.DevKit.CSharpCgdk
 					}
 				}
 
-				remoteProcessClient.Write(actions);
+				remoteProcessClient.Write(actions, strategy.CustomRendering());
 			}
 		}
 	}

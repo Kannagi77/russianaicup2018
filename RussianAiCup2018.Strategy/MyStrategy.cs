@@ -114,5 +114,10 @@ namespace Com.CodeGame.CodeBall2018.DevKit.CSharpCgdk
 			action.jump_speed = jump ? Constants.ROBOT_MAX_JUMP_SPEED : 0.0;
 			action.use_nitro = false;
 		}
+
+		public string CustomRendering()
+		{
+			return "";
+		}
 	}
 }

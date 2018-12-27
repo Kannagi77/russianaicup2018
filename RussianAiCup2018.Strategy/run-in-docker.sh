@@ -1,3 +1,3 @@
-set -ex
+set -e
 
-dotnet /output/csharp-cgdk.dll "$@"
+cd /output && dotnet ./csharp-cgdk.dll "$@"
