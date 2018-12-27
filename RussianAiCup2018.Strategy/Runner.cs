@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading;
 using Com.CodeGame.CodeBall2018.DevKit.CSharpCgdk.Model;
 
 namespace Com.CodeGame.CodeBall2018.DevKit.CSharpCgdk
@@ -10,7 +12,26 @@ namespace Com.CodeGame.CodeBall2018.DevKit.CSharpCgdk
 
 		public static void Main(string[] args)
 		{
-			new Runner(args.Length == 3 ? args : new[] {"127.0.0.1", "31001", "0000000000000000"}).Run();
+			Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+			if (args.Length == 3)
+			{
+				new Runner(args).Run();
+			}
+			else
+			{
+				var localRunnerProcessStartInfo = new ProcessStartInfo
+				{
+					WorkingDirectory = @"C:\Source\russianaicup2018\local-runner",
+					FileName = @"C:\Source\russianaicup2018\local-runner\codeball2018.exe",
+					CreateNoWindow = false,
+					UseShellExecute = false,
+					Arguments = "--p2 empty --no-countdown"
+				};
+				Process.Start(localRunnerProcessStartInfo);
+				Thread.Sleep(2000);
+
+				new Runner(new[] { "127.0.0.1", "31001", "0000000000000000" }).Run();
+			}
 		}
 
 		private Runner(IReadOnlyList<string> args)
